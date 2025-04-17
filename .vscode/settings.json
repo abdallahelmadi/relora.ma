@@ -3,6 +3,7 @@
   "files.exclude": {
     "**/node_modules": true,
     "**/next-env.d.ts": true,
-    "**/package-lock.json": true
+    "**/package-lock.json": true,
+    "**/.next": true
   }
 }
