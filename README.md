@@ -4,6 +4,9 @@ class Program
 {
     static void Main()
     {
+        // Set console color
+        Console.ForegroundColor = ConsoleColor.Cyan;
+        
         // Display welcome message and menu
         Console.WriteLine("# WELCOME TO MY PROGRAM");
         Console.WriteLine("==========================");
