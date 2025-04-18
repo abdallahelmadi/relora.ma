@@ -4,101 +4,84 @@ class Program
 {
     static void Main()
     {
-        // Set console color
-        Console.ForegroundColor = ConsoleColor.Cyan;
-        
-        // Display welcome message and menu
-        Console.WriteLine("# WELCOME TO MY PROGRAM");
-        Console.WriteLine("==========================");
-        Console.WriteLine("\nPlease choose one of the option below\n");
+        Console.WriteLine("WELCOME TO MY PROGRAM");
+        Console.WriteLine("=====================\n");
+        Console.WriteLine("Please choose one of the option below\n");
         Console.WriteLine("1. Developer's name's first three letter");
         Console.WriteLine("2. Addition");
         Console.WriteLine("3. Absolute value of the subtraction");
         Console.WriteLine("4. Multiplication");
         Console.WriteLine("5. Exit");
-        
-        // Get user input
+
         Console.Write("\nWrite your option please: ");
-        int choice = int.Parse(Console.ReadLine());
-        
-        // Process user choice
-        if (choice == 1)
+        int input = int.Parse(Console.ReadLine());
+
+        switch (input)
         {
-            ShowDeveloperName();
+            case 1:
+                sayMyName();
+                break;
+            case 2:
+                totalOfNumbers();
+                break;
+            case 3:
+                differenceOfNumbers();
+                break;
+            case 4:
+                multiplicationOfNumbers();
+                break;
+            case 5:
+                break;
+            default:
+                Console.WriteLine("You entered something other than a menu number");
+                break;
         }
-        else if (choice == 2)
+        Console.WriteLine("\nTHANK YOU and GOOD BYE");
+    }
+
+    static void sayMyName()
+    {
+        Console.WriteLine("\nMy name's first three letter\n");
+        Console.WriteLine("M    M  AAAA  RRRR");
+        Console.WriteLine("MM  MM A    A R   R");
+        Console.WriteLine("M MM M AAAAAA RRR");
+        Console.WriteLine("M    M A    A R  R");
+        Console.WriteLine("M    M A    A R   R");
+    }
+
+    static void totalOfNumbers()
+    {
+        Console.Write("\nPlease enter the first number: ");
+        int num1 = int.Parse(Console.ReadLine());
+        Console.Write("Please enter the second number: ");
+        int num2 = int.Parse(Console.ReadLine());
+        Console.WriteLine($"\nTotal of {num1} and {num2} is {num1 + num2}");
+    }
+
+    static void differenceOfNumbers()
+    {
+        Console.Write("\nPlease enter the first number: ");
+        int num1 = int.Parse(Console.ReadLine());
+        Console.Write("Please enter the second number: ");
+        int num2 = int.Parse(Console.ReadLine());
+        int result = 0;
+        if (num1 > num2)
         {
-            PerformAddition();
-        }
-        else if (choice == 3)
-        {
-            PerformSubtraction();
-        }
-        else if (choice == 4)
-        {
-            PerformMultiplication();
-        }
-        else if (choice == 5)
-        {
-            // Just exit
+            result = num1 - num2;
         }
         else
         {
-            Console.WriteLine("\nYou entered something other than a menu number");
+            result = num2 - num1;
         }
-        
-        // Thank you message
-        Console.WriteLine("\nTHANK YOU and GOOD BYE");
-    }
-    
-    static void ShowDeveloperName()
-    {
-        Console.WriteLine("\nMy name's first three letter\n");
-        
-        // Big letter 'A' (replace with your first initial)
-        Console.WriteLine("  AA   BBBB  CCC ");
-        Console.WriteLine(" A  A  B   B C   ");
-        Console.WriteLine("AAAAA  BBBB  C   ");
-        Console.WriteLine("A    A B   B C   ");
-        Console.WriteLine("A    A BBBB  CCC");
-        
-        // Note: Replace the letters above with your own initials
-        // This example shows A-B-C, you should change to your initials
-    }
-    
-    static void PerformAddition()
-    {
-        Console.Write("\nPlease enter the first number: ");
-        double num1 = double.Parse(Console.ReadLine());
-        
-        Console.Write("Please enter the second number: ");
-        double num2 = double.Parse(Console.ReadLine());
-        
-        double result = num1 + num2;
-        Console.WriteLine($"\nTotal of {num1} and {num2} is {result}");
-    }
-    
-    static void PerformSubtraction()
-    {
-        Console.Write("\nPlease enter the first number: ");
-        double num1 = double.Parse(Console.ReadLine());
-        
-        Console.Write("Please enter the second number: ");
-        double num2 = double.Parse(Console.ReadLine());
-        
-        double result = Math.Abs(num1 - num2);
         Console.WriteLine($"\nDifference of {num1} and {num2} is {result}");
     }
-    
-    static void PerformMultiplication()
+
+    static void multiplicationOfNumbers()
     {
         Console.Write("\nPlease enter the first number: ");
-        double num1 = double.Parse(Console.ReadLine());
-        
+        int num1 = int.Parse(Console.ReadLine());
         Console.Write("Please enter the second number: ");
-        double num2 = double.Parse(Console.ReadLine());
-        
-        double result = num1 * num2;
-        Console.WriteLine($"\nMultiplication of {num1} and {num2} is {result}");
+        int num2 = int.Parse(Console.ReadLine());
+        Console.WriteLine($"\nMultiplication of {num1} and {num2} is {num1 * num2}");
     }
 }
